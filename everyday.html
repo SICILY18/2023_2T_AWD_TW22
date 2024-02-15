@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday ni Cielo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            font-family: "Protest Riot", sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            border-radius: 10px;
+        }
+        
+        button {
+            border-radius: 100px;
+            box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset, rgba(44, 187, 99, .15) 0 1px 2px, rgba(44, 187, 99, .15) 0 2px 4px, rgba(44, 187, 99, .15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(44, 187, 99, .15) 0 16px 32px;
+            color: green;
+            cursor: pointer;
+            display: inline-block;
+            font-family: "Protest Riot", sans-serif;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 16px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        
+        .box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        button:hover {
+            box-shadow: rgba(255, 255, 255, 0.35) 0 -25px 18px -14px inset, rgba(44, 187, 99, .25) 0 1px 2px, rgba(44, 187, 99, .25) 0 2px 4px, rgba(44, 187, 99, .25) 0 4px 8px, rgba(44, 187, 99, .25) 0 8px 16px, rgba(44, 187, 99, .25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+        }
+        
+        .box.Monday {
+            background-color: #BFD8AF;
+        }
+        
+        .box.Tuesday {
+            background-color: #FF90BC;
+        }
+        
+        .box.Wednesday {
+            background-color: #7ED7C1;
+        }
+        
+        .box.Thursday {
+            background-color: #F1C27B;
+        }
+        
+        .box.Friday {
+            background-color: #F9CEEE;
+        }
+        
+        .box.Saturday {
+            background-color: #FF7878;
+        }
+        
+        .box.Sunday {
+            background-color: #A6B1E1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <button onclick="showBox('Monday')" class="Monday" style="background-color: #BFD8AF;">Monday</button>
+        <button onclick="showBox('Tuesday')" class="Tuesday" style="background-color: #FF90BC;">Tuesday</button>
+        <button onclick="showBox('Wednesday')" class="Wednesday" style="background-color: #7ED7C1;">Wednesday</button>
+        <button onclick="showBox('Thursday')" class="Thursday" style="background-color: #F1C27B;">Thursday</button>
+        <button onclick="showBox('Friday')" class="Friday" style="background-color: #F9CEEE;">Friday</button>
+        <button onclick="showBox('Saturday')" class="Saturday" style="background-color: #FF7878;">Saturday</button>
+        <button onclick="showBox('Sunday')" class="Sunday" style="background-color: #A6B1E1;">Sunday</button>
+
+        <div class="box" id="box"></div>
+    </div>
+
+    <script>
+        function showBox(day) {
+            var box = document.getElementById('box');
+            box.className = 'box ' + day;
+            box.innerHTML = day;
+            box.classList.add('show');
+
+            setTimeout(function() {
+                box.classList.remove('show');
+            }, 1000);
+        }
+    </script>
+
+</body>
+
+</html>
