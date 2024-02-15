@@ -5,24 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator ni Cielo</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
-            font-family: 'Poppins', sans-serif;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(to right, #FF6B6B, #5482b3);
+            background-color: rgb(0, 0, 0);
+            font-family: "Protest Riot", sans-serif;
         }
         
         #calculator {
             text-align: center;
             padding: 40px;
-            border: 3px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            border: 4px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 0 140px 0 rgba(233, 6, 6, 0.688), 0 0 30px 15px rgba(221, 59, 59, 0.975);
         }
         
         input {
@@ -33,40 +35,25 @@
         }
         
         button {
-            align-items: center;
-            appearance: none;
-            background-clip: padding-box;
-            background-color: initial;
-            background-image: none;
-            border-style: none;
-            box-sizing: border-box;
-            color: #000000;
+            background: linear-gradient(to bottom right, #8d0921, #de0f0f);
+            border: 0;
+            border-radius: 162px;
+            color: #FFFFFF;
             cursor: pointer;
             display: inline-block;
-            flex-direction: row;
-            flex-shrink: 0;
-            font-family: Eina01, sans-serif;
+            font-family: "Protest Riot", sans-serif;
             font-size: 16px;
-            font-weight: 800;
-            justify-content: center;
-            line-height: 24px;
-            margin: 0;
-            min-height: 64px;
-            outline: none;
-            overflow: visible;
-            padding: 19px 26px;
-            pointer-events: auto;
-            position: relative;
+            font-weight: 500;
+            line-height: 2.5;
+            outline: transparent;
+            padding: 0 1rem;
             text-align: center;
             text-decoration: none;
-            text-transform: none;
+            transition: box-shadow .3s ease-in-out;
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
-            vertical-align: middle;
-            width: auto;
-            word-break: keep-all;
-            z-index: 0;
+            white-space: nowrap;
         }
         
         @media (min-width: 768px) {
@@ -75,71 +62,12 @@
             }
         }
         
-        button:before,
-        button:after {
-            border-radius: 80px;
+        button:not([disabled]):focus {
+            box-shadow: 0 0 .25rem rgba(232, 232, 232, 0.837), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
         }
         
-        button:before {
-            background-image: linear-gradient(92.83deg, #ff26a1 0, #67c3e4 100%);
-            content: "";
-            display: block;
-            height: 100%;
-            left: 0;
-            overflow: hidden;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: -2;
-        }
-        
-        button:after {
-            background-color: initial;
-            background-image: linear-gradient(#b775bc 0, #ff91d3 100%);
-            bottom: 4px;
-            content: "";
-            display: block;
-            left: 4px;
-            overflow: hidden;
-            position: absolute;
-            right: 4px;
-            top: 4px;
-            transition: all 100ms ease-out;
-            z-index: -1;
-        }
-        
-        button:hover:not(:disabled):before {
-            background: linear-gradient(92.83deg, rgb(81, 91, 228) 0%, rgb(220, 101, 183) 100%);
-        }
-        
-        button:hover:not(:disabled):after {
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: 0;
-            transition-timing-function: ease-in;
-            opacity: 0;
-        }
-        
-        button:active:not(:disabled) {
-            color: #ccc;
-        }
-        
-        button:active:not(:disabled):before {
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
-        }
-        
-        button:active:not(:disabled):after {
-            background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
-            bottom: 4px;
-            left: 4px;
-            right: 4px;
-            top: 4px;
-        }
-        
-        button:disabled {
-            cursor: default;
-            opacity: .24;
+        button:not([disabled]):hover {
+            box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
         }
     </style>
 </head>
